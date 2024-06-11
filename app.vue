@@ -1,14 +1,8 @@
 <template>
-  <div>
-    <Header/>
-  </div>
-  <div>
-  <Home/>
-  </div>
-  <div>
-    <Footer/>
-  </div>
+  <NuxtLayout >
+    <NuxtPage/>
+  </NuxtLayout>
 </template>
-<script>
+<script lang="ts" setup>
 
 </script>
