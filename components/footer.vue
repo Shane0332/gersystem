@@ -18,9 +18,9 @@
     </div>
     <div class="text-wrap"> 
     <p class="mx-40 my-4 font-bold text-xl">Сэтгэгдэл</p>
-    <UAvatar size="sm" src="https://avatars.githubusercontent.com/u/739984?v=4" chip-color="rose" chip-text="" chip-position="top-right" alt="Avatar"/><p class="text-sm my-2 mx-2">Nice site. Keep going!</p>
-    <UAvatar size="sm" src="https://avatars.githubusercontent.com/u/739984?v=4" chip-color="rose" chip-text="" chip-position="top-right" alt="Avatar"/><p class="text-sm my-2 mx-2">Ystoi goy psda shuu tsaashdaa hicheegeerei</p>
-    <UAvatar size="sm" src="https://avatars.githubusercontent.com/u/739984?v=4" chip-color="rose" chip-text="" chip-position="top-right" alt="Avatar"/><p class="text-sm my-2 mx-2">Ystoi zuv ym hiisen bn mundag psda shuu chi goy psda shuu hahhahhsh</p>
+    <UAvatar size="sm" src="https://avatars.githubusercontent.com/u/739984?v=4" chip-color="sky" chip-text="" chip-position="top-right" alt="Avatar"/><p class="text-sm my-2 mx-2">Nice site. Keep going!</p>
+    <UAvatar size="sm" src="https://avatars.githubusercontent.com/u/739984?v=4" chip-color="sky" chip-text="" chip-position="top-right" alt="Avatar"/><p class="text-sm my-2 mx-2">Ystoi goy psda shuu tsaashdaa hicheegeerei</p>
+    <UAvatar size="sm" src="https://avatars.githubusercontent.com/u/739984?v=4" chip-color="sky" chip-text="" chip-position="top-right" alt="Avatar"/><p class="text-sm my-2 mx-2">Ystoi zuv ym hiisen bn mundag psda shuu chi goy psda shuu hahhahhsh</p>
     </div>
     </div>
     </div>

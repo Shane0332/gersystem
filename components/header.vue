@@ -12,7 +12,7 @@
     <div class="w-28 h-28 justify-start ml-28">
         <img src="~/assets/Logo.png" alt="">
     </div>
-    <p class="text-5xl font-bold text-slate-900 my-5">Ger System</p>
+    <p class="text-4xl font-bold text-slate-900 my-5">Ger System</p>
     <div class="my-7 mx-20 space-x-11 ml-96">
     <NuxtLink to="/home"><Button class="transition ease-in-out  bg-sky-500  hover:scale-110 shadow-sm hover:bg-slate-900  border  h-10 text-sm  w-24 rounded-lg">НҮҮР</Button></NuxtLink>
     <NuxtLink to="/contact"><Button class="transition ease-in-out  bg-sky-500  hover:scale-110 shadow-2xl hover:bg-slate-900  border  h-10 text-sm  w-28 rounded-lg">ГЭР НЭМЭХ</Button></NuxtLink>
