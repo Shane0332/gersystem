@@ -31,6 +31,7 @@
                         </div>
                     </div>
                     <div class="bg-sky-50  mx-6 h-44 w-64 border">
+                      <NuxtLink to="https://www.google.com/maps/place/Blue+Sky+Eco+Tourist+camp/@46.7927007,101.9381137,1248m/data=!3m1!1e3!4m6!3m5!1s0x5d82cbe9fb7f55bd:0x4bb78c40d5ef1f4c!8m2!3d46.7921446!4d101.9407811!16s%2Fg%2F11kp_99gt2!5m1!1e1?entry=ttu"><img src="~/assets/map.png" alt="" class="rounded-lg"></NuxtLink>
                     </div>
                 </div>
                 <div class="flex">

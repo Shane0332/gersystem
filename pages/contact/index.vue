@@ -13,7 +13,7 @@
             <p class="text-4xl font-bold ml-20 mt-28 text-slate-800">Contact With Our Certified Agent</p>
             <p class="mx-20 my-4 text-gray-400">Та Gersystem сайтад өөрийн гэр буудлыг нэмэхийг хүсвэл манай админтай холбогдоно уу!</p>
             <Button class="text-white transition  scale-100 hover:scale-110 bg-sky-500 hover:bg-slate-900 h-16 w-32 rounded-lg ml-20 my-14"><Icon name="ic:baseline-local-phone" class="text-white mr-1 mb-0.5 h-6 w-4"/>96611510</Button>
-            <NuxtLink to="https://www.facebook.com/profile.php?id=100066647678479"><Button class="text-white transition scale-100 hover:scale-110 bg-slate-900 hover:bg-stone-500 h-16 w-40 mx-2  rounded-lg my-14"><Icon name="ic:baseline-facebook" class="text-white mr-1 mb-0.5 h-6 w-4"/>Facebook</Button></NuxtLink>
+            <NuxtLink to="https://www.facebook.com/profile.php?id=100066647678479"><Button class="text-white transition scale-100 hover:scale-110 bg-sky-500 hover:bg-slate-900 h-16 w-40 mx-2  rounded-lg my-14"><Icon name="ic:baseline-facebook" class="text-white mr-1 mb-0.5 h-6 w-4"/>Facebook</Button></NuxtLink>
     
           </div>
           
