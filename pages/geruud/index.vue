@@ -21,13 +21,13 @@
                             <p class="text-black text-sm mx-4"><Icon name="material-symbols:other-houses" class="mr-1 mb-0.5 text-sky-500"/>Гэрийн тоо : 5</p>
                         </div>
                         <div class="bg-sky-50 my-4 h-6 w-36 border rounded-lg">                        
-                            <p class="text-black text-sm mx-4"><Icon name="material-symbols:other-houses" class="mr-1 mb-0.5 text-sky-500"/>Сүлжээ : 4G</p>
+                            <p class="text-black text-sm mx-4"><Icon name="ic:baseline-signal-cellular-alt" class="mr-1 mb-0.5 text-sky-500"/>Сүлжээ : 4G</p>
                         </div>
                         <div class="bg-sky-50 my-4 h-6 w-52 border rounded-lg">                        
-                            <p class="text-black text-sm mx-4"><Icon name="material-symbols:other-houses" class="mr-1 mb-0.5 text-sky-500"/>Сумийн төвөөс : 5км</p>
+                            <p class="text-black text-sm mx-4"><Icon name="ic:round-follow-the-signs" class="mr-1 mb-0.5 text-sky-500"/>Сумийн төвөөс : 5км</p>
                         </div>
                         <div class="bg-sky-50 my-4 h-6 w-36 border rounded-lg">                        
-                            <p class="text-black text-sm mx-4"><Icon name="material-symbols:other-houses" class="mr-1 mb-0.5 text-sky-500"/>Өглөөний цай</p>
+                            <p class="text-black text-sm mx-4"><Icon name="mdi:food-croissant" class="mr-1 mb-0.5 text-sky-500"/>Өглөөний цай</p>
                         </div>
                     </div>
                     <div class="bg-sky-50  mx-6 h-44 w-64 border">
