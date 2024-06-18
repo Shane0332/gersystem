@@ -70,10 +70,10 @@
           </div>
         </div>
       </div>
-   <div>
+ <!-- Footer -->
+  <div>
     <Footer/>
-   </div>
-  
+  </div>
 </template>
 
 <script lang="ts" setup>

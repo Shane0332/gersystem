@@ -1,5 +1,5 @@
 <template>
-<div class="bg-sky-50 w-full h-100">
+<div class="bg-sky-50 w-full md:w-full h-100">
     <div class="h-12  bg-white border  text-stone-900 mx-12 md:32 lg:80">
 <div class="flex justify-start space-x-10 ml-32 text-sm ">
 <a href="#" class="hover:text-sky-500 my-4"><Icon name="ic:baseline-local-phone" class="mr-1 mb-0.5"/>96611510</a>
