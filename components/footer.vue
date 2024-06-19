@@ -19,7 +19,7 @@
     <div class="text-wrap"> 
     <p class="mx-40 my-4 font-bold text-xl">Сэтгэгдэл</p>
     <UAvatar size="sm" src="https://scontent.fuln10-1.fna.fbcdn.net/v/t39.30808-1/444479882_785373910360858_895715580385235696_n.jpg?stp=c2.0.200.200a_dst-jpg_p200x200&_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=JLgWACGTn-oQ7kNvgEvjfdr&_nc_ht=scontent.fuln10-1.fna&oh=00_AYAp4SO4PZ5A9aKlEsrNX_PmjFs5lUovSnwoFNNbrpfU1w&oe=6675932A" chip-color="sky" chip-text="" chip-position="top-right" alt="Avatar"/><p class="text-sm my-2 mx-2">Nice site. Keep going!</p>
-    <UAvatar size="sm" src="https://scontent.fuln10-1.fna.fbcdn.net/v/t39.30808-1/353791981_984371502697942_6706381561257021817_n.jpg?stp=dst-jpg_s200x200&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=KCdBAolm0BYQ7kNvgF_AZZ4&_nc_ht=scontent.fuln10-1.fna&oh=00_AYB-n2dYleymdGW0CQlQ04vzu87WxVBdMWxTGRjqunLVcQ&oe=66758AFD" chip-color="sky" chip-text="" chip-position="top-right" alt="Avatar"/><p class="text-sm my-2 mx-2"></p>
+    <UAvatar size="sm" src="https://scontent.fuln10-1.fna.fbcdn.net/v/t39.30808-1/353791981_984371502697942_6706381561257021817_n.jpg?stp=dst-jpg_s200x200&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=KCdBAolm0BYQ7kNvgF_AZZ4&_nc_ht=scontent.fuln10-1.fna&oh=00_AYB-n2dYleymdGW0CQlQ04vzu87WxVBdMWxTGRjqunLVcQ&oe=66758AFD" chip-color="sky" chip-text="" chip-position="top-right" alt="Avatar"/><p class="text-sm my-2 mx-2">Nice !!!</p>
     <UAvatar size="sm" src="https://avatars.githubusercontent.com/u/739984?v=4" chip-color="sky" chip-text="" chip-position="top-right" alt="Avatar"/><p class="text-sm my-2 mx-2">Ystoi zuv ym hiisen bn mundag psda shuu chi goy psda shuu hahhahhsh</p>
     </div>
     </div>
