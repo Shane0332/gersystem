@@ -4,12 +4,15 @@
     <Header/>
   </div>
   <div class="bg-sky-50 flex">
-    <div class="mx-32 my-32 bg-white rounded-lg w-2/4">
+    <div class="mx-32 my-32 bg-white rounded-lg w-2/4 flex">
       <UForm :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
        <!-- name of org -->
-         <UFormGroup label="Байгууллагын нэр :" name="org">
+         <UFormGroup  name="org" class="my-12 mx-12">
+          <span class="text-slate-900 ">Байгууллагын нэр :</span>
            <UInput v-model="state.org" color="sky"/>
          </UFormGroup>
+ 
+
          <!-- about by org -->
          <p>Байгууллагын тухай :</p>
          <UTextarea v-model="value" color="sky"/>
