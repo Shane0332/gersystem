@@ -1,6 +1,9 @@
 <template>
+    <div>
+        <Header/>
+    </div>
   <div class="bg-sky-50 h-full w-full flex justify-center ">
-    <div class="bg-white border h-2/4 w-72 rounded-lg shadow-lg shadow-sky-500 mt-32 mb-96">
+    <div class="bg-white border h-2/4 w-72 rounded-lg shadow-lg shadow-sky-500 mt-32 mb-96 transition scale-100 hover:scale-110">
         <div class="mx-8 my-2">
             <span class="text-slate-900 font-bold text-3xl">Create Account</span>
             <p class="text-sm text-slate-500">Start managing your pets today?</p>
@@ -8,24 +11,27 @@
         <div class="mt-6">
             <UFormGroup  name="org" class="mx-4">
           <span class="text-slate-900 text-sm">First name *</span>
-           <UInput v-model="state.org" color="sky"/>
+           <UInput v-model="state.org" color="sky" placeholder="First name..." variant="outline"/>
          </UFormGroup>  
         </div>
         <div class="mt-6">
             <UFormGroup  name="email" class="mx-4">
           <span class="text-slate-900 text-sm">Email *</span>
-           <UInput v-model="state.email" color="sky"/>
+           <UInput v-model="state.email" color="sky" placeholder="Email..." variant="outline"/>
          </UFormGroup>  
         </div>
         <div class="mt-6">
             <UFormGroup  name="password" class="mx-4">
           <span class="text-slate-900 text-sm">Password *</span>
-           <UInput v-model="state.password" color="sky"/>
+           <UInput v-model="state.password" color="sky" placeholder="Password..." variant="outline" class="text-black"/>
          </UFormGroup>  
         </div>
         <Button class="bg-sky-500 rounded-lg h-8 w-64 mt-6 mx-4">Create Account</Button>
         <NuxtLink to="/home"><Button class="bg-sky-500 rounded-lg h-8 w-64 my-6 mx-4">Home</Button></NuxtLink>
     </div>
+  </div>
+  <div>
+    <Footer/>
   </div>
 </template>
 

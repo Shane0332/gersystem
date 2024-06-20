@@ -4,7 +4,7 @@
     <Header/>
   </div>
   <div class="bg-sky-50 flex">
-    <div class="mx-32 my-32 bg-white rounded-lg w-2/4 flex">
+    <div class="mx-32 my-32 bg-white rounded-lg w-2/4 flex  shadow-lg border">
       <UForm :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
        <!-- name of org -->
          <UFormGroup  name="org" class="my-12 mx-12">
