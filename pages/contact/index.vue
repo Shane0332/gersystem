@@ -1,52 +1,45 @@
 <template>
-    <div>
-        <Header/>
+  <!-- Header -->
+  <div>
+    <Header/>
+  </div>
+  <div class="bg-sky-50 flex">
+    <div class="mx-32 my-32 bg-white rounded-lg w-2/4">
+      <UForm :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
+       <!-- name of org -->
+         <UFormGroup label="Байгууллагын нэр :" name="org">
+           <UInput v-model="state.org" color="sky"/>
+         </UFormGroup>
+         <!-- about by org -->
+         <p>Байгууллагын тухай :</p>
+         <UTextarea v-model="value" color="sky"/>
+         <!-- zurag oruulah heseg -->
+         <p>Байгууллагын зураг :</p>
+         <UInput type="file" size="sm" icon="i-heroicons-folder" color="sky"/>
+     
+         <UFormGroup label="Утасны дугаар :" name="phone">
+           <UInput v-model="state.phone" type="phone" color="sky"/>
+         </UFormGroup>
+     
+         <UButton type="submit">Next</UButton>
+       </UForm>
     </div>
-    <div class="bg-sky-50 h-full w-full flex">
-
-      <div class="flex bg-white border w-full rounded-lg mx-12">
-         <div class="flex bg-sky-50 border w-full rounded-lg h-fit mx-12 my-6 ">
-    <UForm :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
-    <UFormGroup label="Ner :" name="email" color="sky" class="mx-12 my-12 text-sky-500 w-96">
-      <UInput v-model="state.email" color="sky"/>
-    </UFormGroup>
-    <UFormGroup label="Password" name="password" color="sky" class="mx-12 my-12 text-black">
-      <UInput v-model="state.password" type="password" color="sky"/>
-    </UFormGroup>
-    <UFormGroup label="Email" name="email" color="sky" class="mx-12 my-12 text-black">
-      <UInput v-model="state.email" color="sky"/>
-    </UFormGroup>
-  
-  <UInput type="file" size="sm" icon="i-heroicons-folder" color="sky" class="w-96 mx-12 my-12"/>
-    <UFormGroup label="Password" name="password" color="sky" class="mx-12 my-12">
-      <UInput v-model="state.password" type="password" color="sky"/>
-    </UFormGroup>
-    <UFormGroup label="Email" name="email" color="sky" class="mx-12 my-12">
-      <UInput v-model="state.email" color="sky"/>
-    </UFormGroup>
-    <UFormGroup label="Password" name="password" color="sky" class="mx-12 my-12">
-      <UInput v-model="state.password" type="password" color="sky"/>
-    </UFormGroup>
-
-    <UButton type="submit" color="sky" class="ml-32 my-6">
-      Submit
-    </UButton>
-  </UForm>
-         </div>
-        </div>
-    </div>
-    <!-- footer -->
-  <Footer/> 
-
+  </div>
+  <!-- FooterL -->
+  <div>
+    <Footer/>
+  </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { object, string, type InferType } from 'yup'
 import type { FormSubmitEvent } from '#ui/types'
+const value = ref('')
+
 
 const schema = object({
-  email: string().email('Invalid email').required('Required'),
-  password: string()
+  org: string().email('Invalid email').required('Required'),
+  phone: string()
     .min(8, 'Must be at least 8 characters')
     .required('Required')
 })
@@ -54,8 +47,8 @@ const schema = object({
 type Schema = InferType<typeof schema>
 
 const state = reactive({
-  email: undefined,
-  password: undefined
+  org : undefined,
+  phone: undefined
 })
 
 async function onSubmit (event: FormSubmitEvent<Schema>) {
