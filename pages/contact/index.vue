@@ -37,8 +37,9 @@
             <UFormGroup  name="org" class="mx-4">
           <span class="text-slate-900 text-sm">Гэрийн тоо *</span>
            <UInput v-model="state.org" color="sky" placeholder="" variant="outline"/>
-         </UFormGroup>  
-    </div>
+         </UFormGroup> 
+         <NuxtLink to="/ger"><Button class="bg-sky-500 h-10 mx-4 my-6 w-24 rounded-lg border">Next</Button> </NuxtLink>
+=    </div>
 
    </div>
   </div>
@@ -61,7 +62,7 @@
                <div class="bg-sky-50 h-10 transition ease-in-out hover:scale-110 w-10 my-6 rounded-xl ml-96  border shadow-xl">
                    <Icon name="material-symbols:mail-outline" class="text-sky-500 ml-1 my-2 h-6 w-8"/>
                </div>
-               
+    
            </div>
        </div>
    </div>
