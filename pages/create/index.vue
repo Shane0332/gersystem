@@ -13,9 +13,6 @@
 <div v-else>User is signed out</div>
 
   </div>
-  <div>
-    <Footer/>
-  </div>
 </template>
 <script lang="ts" setup>
 
