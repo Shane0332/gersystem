@@ -1,66 +1,46 @@
 <template>
-    <div>
-        <Header/>
-    </div>
-  <div class="bg-sky-50 h-full w-full flex justify-center ">
-    <div class="bg-white border h-2/4 w-72 rounded-lg shadow-lg shadow-sky-500 mt-32 mb-96 transition scale-100 hover:scale-110">
-        <div class="mx-8 my-2">
-            <span class="text-slate-900 font-bold text-3xl">Create Account</span>
-            <p class="text-sm text-slate-500">Start managing your pets today?</p>
-        </div>
-        <div class="mt-6">
-            <UFormGroup  name="org" class="mx-4">
-          <span class="text-slate-900 text-sm">First name *</span>
-           <UInput v-model="state.org" color="sky" placeholder="First name..." variant="outline"/>
-         </UFormGroup>  
-        </div>
-        <div class="mt-6">
-            <UFormGroup  name="email" class="mx-4">
-          <span class="text-slate-900 text-sm">Email *</span>
-           <UInput v-model="state.email" color="sky" placeholder="Email..." variant="outline"/>
-         </UFormGroup>  
-        </div>
-        <div class="mt-6">
-            <UFormGroup  name="password" class="mx-4">
-          <span class="text-slate-900 text-sm">Password *</span>
-           <UInput v-model="state.password" color="sky" placeholder="Password..." variant="outline" class="text-black"/>
-         </UFormGroup>  
-        </div>
-        <Button class="bg-sky-500 rounded-lg h-8 w-64 mt-6 mx-4">Create Account</Button>
-        <NuxtLink to="/home"><Button class="bg-sky-500 rounded-lg h-8 w-64 my-6 mx-4">Home</Button></NuxtLink>
-    </div>
-  </div>
   <div>
-    <Footer/>
+    <p><NuxtLink to ="/secret">Go to Secret Page</NuxtLink></p>
+    <button class="button" v-if="!firebaseUser" @click="signIn">Sign In</button>
+    <button class="button" v-if="firebaseUser" @click="signOut">Sign Out</button>
+    <div v-if="firebaseUser">
+      <client-only>
+        <pre class="text-white">
+      {{ firebaseUser }}
+    </pre>
+      </client-only>
+    </div>
+<div v-else>User is signed out</div>
+
   </div>
 </template>
-
 <script lang="ts" setup>
-import { object, string, type InferType } from 'yup'
-import type { FormSubmitEvent } from '#ui/types'
-const value = ref('')
+
+import { signInUser, signOutUser, initUser } from '../../composables/useFirebase'; // Adjust the import path as necessary
 
 
-const schema = object({
-  org: string().email('Invalid email').required('Required'),
-  email: string().email('Invalid email').required('Required'),
-  password: string()
-    .min(8, 'Must be at least 8 characters')
-    .required('Required')
-})
+const credentials = ref()
+const firebaseUser = useFirebaseUser();
 
-type Schema = InferType<typeof schema>
+const signIn = async () => {
+  const email = "batzorigaltansuh@gmail.com";
+  const password = "12345678";
+  try {
+    credentials.value = await signInUser(email, password);
+    console.log("Credentials: ", credentials.value);
+  } catch (error) {
+    console.error("Error during sign in: ", error);
+  }
+};
 
-const state = reactive({
-  org : undefined,
-  email : undefined,
+const signOut = async () => {
+  try {
+    credentials.value = await signOutUser();
+    console.log("Sign out result: ", credentials.value);
+  } catch (error) {
+    console.error("Error during sign out: ", error);
+  }
+};
 
-  password: undefined
-})
-
-async function onSubmit (event: FormSubmitEvent<Schema>) {
-  // Do something with event.data
-  console.log(event.data)
-}
+initUser();
 </script>
-

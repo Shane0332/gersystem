@@ -3,53 +3,55 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
-
+  signOut,
 } from "firebase/auth";
-import { get } from "firebase/database";
-export const createUser = async (email :string, password: string) => {
+
+export const createUser = async (email: string, password: string) => {
   const auth = getAuth();
-  const credentials = await createUserWithEmailAndPassword(
-    auth,
-    email,
-    password
-  ).catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-  });
-  return credentials;
+  try {
+    const credentials = await createUserWithEmailAndPassword(auth, email, password);
+    return credentials.user;
+  } catch (error: any) {
+    console.error(`Error during user creation: ${error.message}`);
+    throw new Error(`User creation failed: ${error.message}`);
+  }
 };
-export const signInUser = async (email :string, password: string) => {
+
+export const signInUser = async (email: string, password: string) => {
   const auth = getAuth();
-  const credentials = await signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-    });
-  return credentials;
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    return userCredential.user;
+  } catch (error: any) {
+    console.error(`Error during sign in: ${error.message}`);
+    throw new Error(`Sign in failed: ${error.message}`);
+  }
 };
-export const initUser = async () => {
+
+export const initUser = () => {
   const auth = getAuth();
+  const firebaseUser =useFirebaseUser();
+
+  firebaseUser.value=auth.currentUser
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/auth.user
-      const uid = user.uid;
-      console.log(user);
+    firebaseUser.value=user
+      // console.log("User is signed in: ", user);\
     } else {
-      console.log(user);
-
+      // console.log("No user is signed in");
+      
     }
+    firebaseUser.value=user
   });
 };
-export const signOutUser = async ()=>{
 
-  const  auth = getAuth();
-  const result = await auth.signOut();
-  console.log("Sing out ", result)
-}
+export const signOutUser = async () => {
+  const auth = getAuth();
+  try {
+    await signOut(auth);
+    return "Signed out successfully";
+  } catch (error: any) {
+    console.error(`Error during sign out: ${error.message}`);
+    throw new Error(`Sign out failed: ${error.message}`);
+  }
+};
