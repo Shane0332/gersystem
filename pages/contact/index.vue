@@ -27,9 +27,28 @@
     </div>
   </div>
   <!-- FooterL -->
-  <div>
-    <Footer/>
-  </div>
+   <div class="bg-sky-50 h-full w-full">
+     <div class="h-fit mx-12 bg-white border text-wrap flex">
+           <div class="ml-28 my-4 flex ">
+               <p class="text-slate-900">Gersystem сайтад зочилсонд баярлалаа. Та аян замдаа сайн яваарай<Icon name="material-symbols-light:sentiment-satisfied-outline" class="h-6 w-6"/></p>
+           </div>
+           <div class="flex space-x-14">
+               <div class="bg-sky-50 transition ease-in-out hover:scale-110 h-10 w-10 my-6 rounded-xl ml-80  border shadow-xl">
+                   <Icon name="ic:baseline-facebook" class="text-sky-500 ml-1 my-2 h-6 w-8"/>
+               </div>
+               <div class="bg-sky-50 h-10 w-10 transition ease-in-out hover:scale-110 my-6 rounded-xl ml-96  border shadow-xl">
+                   <Icon name="tabler:brand-instagram" class="text-sky-500 ml-1 my-2 h-6 w-8"/>
+               </div>
+               <div class="bg-sky-50 h-10 transition ease-in-out hover:scale-110 w-10 my-6 rounded-xl ml-96  border shadow-xl">
+                   <Icon name="mdi:twitter" class="text-sky-500 ml-1 my-2 h-6 w-8"/>
+               </div>
+               <div class="bg-sky-50 h-10 transition ease-in-out hover:scale-110 w-10 my-6 rounded-xl ml-96  border shadow-xl">
+                   <Icon name="material-symbols:mail-outline" class="text-sky-500 ml-1 my-2 h-6 w-8"/>
+               </div>
+    
+           </div>
+       </div>
+   </div>
 </template>
 
 <script lang="ts" setup>
