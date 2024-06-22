@@ -11,8 +11,6 @@
           <span class="text-slate-900 ">Байгууллагын нэр :</span>
            <UInput v-model="state.org" color="sky"/>
          </UFormGroup>
- 
-
          <!-- about by org -->
          <p>Байгууллагын тухай :</p>
          <UTextarea v-model="value" color="sky"/>
