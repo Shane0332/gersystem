@@ -1,46 +1,34 @@
 <template>
   <div>
-    <p><NuxtLink to ="/secret">Go to Secret Page</NuxtLink></p>
-    <button class="button" v-if="!firebaseUser" @click="signIn">Sign In</button>
-    <button class="button" v-if="firebaseUser" @click="signOut">Sign Out</button>
-    <div v-if="firebaseUser">
-      <client-only>
-        <pre class="text-white">
-      {{ firebaseUser }}
-    </pre>
-      </client-only>
-    </div>
-<div v-else>User is signed out</div>
+    <AuthFirebase 
+    title="Create" 
+    @submit="register" 
+    :form="registerForm" :message="registerMessage" />
 
   </div>
 </template>
+
 <script lang="ts" setup>
+import { ref } from 'vue';
+import { signInUser, createUser, initUser } from '../../composables/useFirebase'; // Corrected imports
 
-import { signInUser, signOutUser, initUser } from '../../composables/useFirebase'; 
-
-
-const credentials = ref()
 const firebaseUser = useFirebaseUser();
+const registerForm = ref({ firstname: "", email: "", password: "" });
 
-const signIn = async () => {
-  const email = "batzorigaltansuh@gmail.com";
-  const password = "12345678";
-  try {
-    credentials.value = await signInUser(email, password);
-    console.log("Credentials: ", credentials.value);
-  } catch (error) {
-    console.error("Error during sign in: ", error);
+const registerMessage = ref("");
+
+
+
+const register = async () => {
+  console.log(registerForm.value);
+  const credentials = await createUser(registerForm.value.email, registerForm.value.password);
+  registerForm.value = { firstname: "", email: "", password: "" };
+  if (credentials) {
+    registerMessage.value = `Successfully registered ${credentials.user.email}`;
+    setTimeout(() => {
+      registerMessage.value = "";
+    }, 3000);
   }
 };
 
-const signOut = async () => {
-  try {
-    credentials.value = await signOutUser();
-    console.log("Sign out result: ", credentials.value);
-  } catch (error) {
-    console.error("Error during sign out: ", error);
-  }
-};
-
-initUser();
 </script>
