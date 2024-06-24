@@ -16,7 +16,7 @@
 </template>
 <script lang="ts" setup>
 
-import { signInUser, signOutUser, initUser } from '../../composables/useFirebase'; // Adjust the import path as necessary
+import { signInUser, signOutUser, initUser } from '../../composables/useFirebase'; 
 
 
 const credentials = ref()
