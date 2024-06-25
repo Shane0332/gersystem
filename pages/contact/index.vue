@@ -50,9 +50,10 @@
 </template>
 
 <script lang="ts" setup>
-import { object, string, InferType } from 'yup';
-import { ref, reactive, onMounted } from 'vue';
+import { object, string } from 'yup';
+import { ref, reactive } from 'vue';
 import type { FormSubmitEvent } from '#ui/types';
+import type { InferType } from 'yup';
 
 // Define validation schema using Yup
 const schema = object({
@@ -76,11 +77,10 @@ const state = reactive<Schema>({
 });
 
 const onSubmit = async (event: FormSubmitEvent<Schema>) => {
-  event.preventDefault();
   
   try {
     // Assuming validation has passed
-    const response = await fetch('/api/foo/add', {
+    const response = await fetch('/api/foo/add?col=Baiguullaga', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
