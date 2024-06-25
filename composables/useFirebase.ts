@@ -1,3 +1,4 @@
+import { Body } from "#build/components";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -33,15 +34,20 @@ export const initUser = () => {
   const firebaseUser =useFirebaseUser();
 
   firebaseUser.value=auth.currentUser
+const userCookie = useCookie("userCookie")
   onAuthStateChanged(auth, (user) => {
     if (user) {
-    firebaseUser.value=user
-      // console.log("User is signed in: ", user);\
+   
     } else {
       // console.log("No user is signed in");
       
     }
     firebaseUser.value=user
+    userCookie.value = user
+    $fetch('/api/auth', {
+      method: 'POST',
+      body: user 
+    })
   });
 };
 

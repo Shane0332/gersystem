@@ -5,7 +5,7 @@ export default defineNuxtPlugin(()=>{
    console.log($auth?.currentUser)
 
    if(!$auth?.currentUser?.uid){
-    return abortNavigation()
+    return navigateTo("/home")
    }
   })
 })
