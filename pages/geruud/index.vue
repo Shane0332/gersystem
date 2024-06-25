@@ -5,18 +5,18 @@
     </div>
     <!-- Body heseg -->
    <div class="bg-sky-50 h-full w-full">
-    <div class="bg-white mx-12 h-full border shadow-xl ">
+    <div class="bg-white text-sm h-full border shadow-xl md:text-sm">
         <p class="text-black ml-12 my-6">Та дараах жуулчны баазуудаас өөрт тохирохыг сонгоод дарна уу!</p>
-        <div class="bg-white border mx-12 my-6 rounded-lg  flex">
+        <div class="bg-white border my-6 rounded-lg  flex">
             <div>
-                <NuxtLink to="/bluesky"><img src="~/assets/ger2.jpg" alt="" class=" mx-6 h-16 w-16 md:h-96 md:w-4/5 my-4 rounded-lg transition hover:scale-110"></NuxtLink>
+                <NuxtLink to="/bluesky"><img src="~/assets/ger2.jpg" alt="" class=" mx-6 h-32 w-32 md:h-96 md:w-4/5 my-4 rounded-lg transition hover:scale-110"></NuxtLink>
             </div>
             <div>
                 <p class="font-bold text-black hover:text-sky-500  my-4 md:text-4xl  text-2xl">Blue Sky Eco Tourist Camp</p>
                 <div class=" my-2 flex">
                     <div>
-                        <div class="flex bg-sky-50 h-6 w-18 md:w-52  border rounded-lg">
-                            <p class="text-black text-sm mx-6"><Icon name="material-symbols:location-on-rounded" class="mr-1 mb-0.5 text-sky-500"/>Өв Бат-Өлзий сум</p>
+                        <div class="flex bg-sky-50 h-6 w-18 md:w-8 border rounded-lg">
+                            <p class="text-black text-xs md:text-sm mx-6"><Icon name="material-symbols:location-on-rounded" class="mr-1 mb-0.5 text-sky-500"/>Өв Бат-Өлзий сум</p>
                         </div>
                         <div class="bg-sky-50 my-4 h-6 w-36 border rounded-lg">                        
                             <p class="text-black text-sm mx-4"><Icon name="material-symbols:other-houses" class="mr-1 mb-0.5 text-sky-500"/>Гэрийн тоо : 5</p>
@@ -137,9 +137,9 @@
 <div class="bg-sky-50 w-full h-full">
 
    
-    <div class="h-fit mx-12 bg-white border text-wrap flex">
+    <div class="h-fit  bg-white border text-wrap flex">
         
-        <div class="ml-28 my-4 flex ">
+        <div class="ml-28 my-4 text-xs flex md:text-xs">
             <p class="text-slate-900">Gersystem сайтад зочилсонд баярлалаа. Та аян замдаа сайн яваарай<Icon name="material-symbols-light:sentiment-satisfied-outline" class="h-6 w-6"/></p>
         </div>
         <div class="flex space-x-14">

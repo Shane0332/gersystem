@@ -12,17 +12,18 @@
            <UInput v-model="state.org" color="sky"/>
          </UFormGroup>
          <!-- about by org -->
-         <p>Байгууллагын тухай :</p>
-         <UTextarea v-model="value" color="sky"/>
+         <p class="text-slate-900 mx-12">Байгууллагын тухай :</p>
+         <UTextarea v-model="value" color="sky" class="my-12 mx-12"/>
          <!-- zurag oruulah heseg -->
-         <p>Байгууллагын зураг :</p>
-         <UInput type="file" size="sm" icon="i-heroicons-folder" color="sky"/>
+         <p class="text-slate-900 mx-12">Байгууллагын зураг :</p>
+         <UInput type="file" size="sm" icon="i-heroicons-folder" color="sky" class="mx-12 my-12"/>
      
-         <UFormGroup label="Утасны дугаар :" name="phone">
-           <UInput v-model="state.phone" type="phone" color="sky"/>
+         <UFormGroup  name="phone">
+          <span class="text-slate-900 mx-12">Холбогдох утас :</span>
+           <UInput v-model="state.phone" type="phone" color="sky" class="mx-12"/>
          </UFormGroup>
      
-         <UButton type="submit">Next</UButton>
+         <UButton type="submit" color="sky" class="h-12 w-16 my-6 mx-12">Next</UButton>
        </UForm>
     </div>
   </div>
@@ -58,7 +59,7 @@ const value = ref('')
 
 
 const schema = object({
-  org: string().email('Invalid email').required('Required'),
+  org: string().required('Required'),
   phone: string()
     .min(8, 'Must be at least 8 characters')
     .required('Required')
