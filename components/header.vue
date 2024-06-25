@@ -18,7 +18,7 @@
             <NuxtLink to="/home"><Button class="transition ease-in-out  bg-sky-500  hover:scale-110 shadow-sm hover:bg-slate-900  border  h-10 text-sm  w-24 rounded-lg">НҮҮР</Button></NuxtLink>
             
             <NuxtLink to="/geruud"><Button class="transition ease-in-out  bg-sky-500  hover:scale-110 shadow-2xl hover:bg-slate-900  border h-10 text-sm  w-36 rounded-lg">ГЭР ЗАХИАЛАХ</Button></NuxtLink>
-            <NuxtLink v-if="firebaseUser" to="/contact"><Button class="transition ease-in-out  bg-sky-500  hover:scale-110 shadow-2xl hover:bg-slate-900  border  h-10 text-sm  w-28 rounded-lg">ГЭР НЭМЭХ</Button></NuxtLink>
+            <NuxtLink v-if="firebaseUser" to="/contact"><Button class="transition ease-in-out  bg-sky-500  hover:scale-110 shadow-2xl hover:bg-slate-900  border  h-10 text-sm  w-44 rounded-lg">БАЙГУУЛЛАГА НЭМЭХ</Button></NuxtLink>
             <NuxtLink  v-if="firebaseUser" to="/home"><Button class="transition ease-in-out  bg-sky-500  hover:scale-110 shadow-sm hover:bg-slate-900  border  h-10 text-sm  w-24 rounded-lg" @click="logout">Logout</Button></NuxtLink>
 
             <NuxtLink v-if="!firebaseUser" to="/login"><Button class="transition ease-in-out  bg-sky-500  hover:scale-110 shadow-2xl hover:bg-slate-900  border h-10 text-sm  w-36 rounded-lg uppercase">Нэвтрэх</Button></NuxtLink>

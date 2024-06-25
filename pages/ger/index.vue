@@ -74,9 +74,6 @@
            </div>
        </div>
    </div>
-   <div class="bg-cyan-500 h-96 w-96">
-<p>kjsdhfk</p>
-   </div>
 </template>
 
 <script lang="ts" setup>

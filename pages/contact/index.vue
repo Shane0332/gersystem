@@ -9,7 +9,7 @@
        <!-- name of org -->
          <UFormGroup  name="org" class="my-12 mx-12">
           <span class="text-slate-900 ">Байгууллагын нэр :</span>
-           <UInput v-model="state.org" color="sky"/>
+           <UInput v-model="state.org" color="sky" />
          </UFormGroup>
          <!-- about by org -->
          <p class="text-slate-900 mx-12">Байгууллагын тухай :</p>
@@ -22,8 +22,8 @@
           <span class="text-slate-900 mx-12">Холбогдох утас :</span>
            <UInput v-model="state.phone" type="phone" color="sky" class="mx-12"/>
          </UFormGroup>
-     
-         <UButton type="submit" color="sky" class="h-12 w-16 my-6 mx-12">Next</UButton>
+         <NuxtLink to="/ger"><UButton type="submit" color="sky" class="h-12 w-16 my-6 mx-12">Next</UButton>
+         </NuxtLink>
        </UForm>
     </div>
   </div>
@@ -76,5 +76,10 @@ async function onSubmit (event: FormSubmitEvent<Schema>) {
   // Do something with event.data
   console.log(event.data)
 }
-</script>
 
+</script>
+<style scoped>
+.input input {
+ color: black; /* Change this to your desired color */
+}
+</style>
