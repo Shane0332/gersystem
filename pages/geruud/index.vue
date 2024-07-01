@@ -14,6 +14,7 @@
         <!-- Loop through Bai array -->
         <div v-for="ba in Bai" :key="ba.id" class="bg-white border mx-12 my-6 rounded-lg flex">
           <div>
+            // @ts-ignore
             <!-- Link to Bluesky page -->
             <NuxtLink :to="`/bluesky/${ba.b_id}`">
               <img src="~/assets/ger2.jpg" alt="" class="mx-6 h-16 w-16 md:h-96 md:w-4/5 my-4 saturate-200 rounded-lg transition hover:scale-110">
@@ -84,7 +85,6 @@
       </div>
     </div>
   
-    <!-- Footer section -->
     <Footer/>
   </template>
   
@@ -107,6 +107,5 @@
   </script>
   
   <style scoped>
-  /* Add any scoped styles if needed */
   </style>
   

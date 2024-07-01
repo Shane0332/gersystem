@@ -33,10 +33,11 @@ export const set = async (col: string, document: Object) => {
 export const add = async (col: string, document: Object) => {
   // @ts-ignore
   const colRef = collection(firestoreDb, col);
+  const docRef = document.name? doc(colRef, document.name) : doc(colRef);
 
-  const docRef = await addDoc(colRef, document);
+  const docs = await setDoc(docRef, document);
 
-  return docRef;
+  return docs;
 };
 
 export const del = async (col:string, id : string) => {
