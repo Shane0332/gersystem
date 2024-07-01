@@ -10,7 +10,7 @@
             <p class="text-base text-gray-400 my-11 mr-40 ml-8">{{firebaseUser?.email}}</p>
               
             <NuxtLink to="/geruud"><Button
-                class="text-white h-12 transition ease-in-out scale-100 hover:scale-110 bg-sky-500 rounded-lg w-32 ml-8 hover:bg-slate-900">Гэр
+                class="text-white animate-bounce h-12 transition ease-in-out scale-100 hover:scale-110 bg-sky-500 rounded-lg w-32 ml-8 hover:bg-slate-900">Гэр
                 захиалах</Button></NuxtLink>
           </div>
           <div class="w-2/3 h-full bg-cover bg-no-repeat my-36 mr-8 ">
@@ -21,8 +21,8 @@
           </div>
         </div>
       </div>
-
     </div>
+
   </div>
 
 

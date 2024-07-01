@@ -5,7 +5,7 @@
   </div>
 <!-- Body -->
  <div class="bg-sky-50 h-full w-full flex justify-center">
-  <div class="bg-white border shadow-sm w-2/4 shadow-sky-500 transition scale-90 hover:scale-100 rounded-lg">
+  <div class="bg-white border shadow-sm w-2/4 shadow-sky-500  rounded-lg">
     <p class="font-bold text-2xl text-slate-900 text-center my-6">Ger Registration</p>
     <div class="mt-6">
       <span class="text-slate-900 mx-4 ">Гэрийн дугаар*</span>
@@ -55,7 +55,7 @@
  <div class="bg-sky-50 h-full w-full">
      <div class="h-fit mx-12 bg-white border text-wrap flex">
            <div class="ml-28 my-4 flex ">
-               <p class="text-slate-900">Gersystem сайтад зочилсонд баярлалаа. Та аян замдаа сайн яваарай<Icon name="material-symbols-light:sentiment-satisfied-outline" class="h-6 w-6"/></p>
+               <p class="text-slate-900 underline">Gersystem сайтад зочилсонд баярлалаа. Та аян замдаа сайн яваарай<Icon name="material-symbols-light:sentiment-satisfied-outline" class="h-6 w-6"/></p>
            </div>
            <div class="flex space-x-14">
                <div class="bg-sky-50 transition ease-in-out hover:scale-110 h-10 w-10 my-6 rounded-xl ml-80  border shadow-xl">

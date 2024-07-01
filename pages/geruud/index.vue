@@ -16,7 +16,7 @@
           <div>
             <!-- Link to Bluesky page -->
             <NuxtLink :to="`/bluesky/${ba.b_id}`">
-              <img src="~/assets/ger2.jpg" alt="" class="mx-6 h-16 w-16 md:h-96 md:w-4/5 my-4 rounded-lg transition hover:scale-110">
+              <img src="~/assets/ger2.jpg" alt="" class="mx-6 h-16 w-16 md:h-96 md:w-4/5 my-4 saturate-200 rounded-lg transition hover:scale-110">
             </NuxtLink>
           </div>
           <div>
