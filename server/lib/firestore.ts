@@ -46,7 +46,7 @@ export const del = async (col:string, id : string) => {
 };
 export const readByBId = async (col: string, bId: string) => {
   const colRef = collection(firestoreDb, col);
-  const q = query(colRef, where('b_id', '==', bId)); // Adjusted to correctly filter by b_id
+  const q = query(colRef, where('e_id', '==', bId)); // Adjusted to correctly filter by b_id
   const snapshot = await getDocs(q);
 
   const docs = snapshot.docs.map((doc) => ({

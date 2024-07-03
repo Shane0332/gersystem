@@ -16,7 +16,7 @@
           <div>
             // @ts-ignore
             <!-- Link to Bluesky page -->
-            <NuxtLink :to="`/bluesky/${ba.b_id}`">
+            <NuxtLink :to="`/bluesky/${ba.name}`">
               <img src="~/assets/ger2.jpg" alt="" class="mx-6 h-16 w-16 md:h-96 md:w-4/5 my-4 rounded-lg transition hover:scale-110">
             </NuxtLink>
           </div>
@@ -27,7 +27,7 @@
             <div class="my-2 flex">
               <div>
                 <div class="flex bg-sky-50 h-6 w-52 md:w-52 border rounded-lg">
-                  <p class="text-black text-sm mx-6"><Icon name="material-symbols:location-on-rounded" class="mr-1 mb-0.5 text-sky-500"/>Өв Бат-Өлзий сум</p>
+                  <p class="text-black text-sm mx-6"><Icon name="material-symbols:location-on-rounded" class="mr-1 mb-0.5 text-sky-500"/>{{firebaseUser.uid}}</p>
                 </div>
                 <div class="bg-sky-50 my-4 h-6 w-36 border rounded-lg">
                   <p class="text-black text-sm mx-4"><Icon name="material-symbols:other-houses" class="mr-1 mb-0.5  text-sky-500"/>Гэрийн тоо : {{ba.b_gertoo}}</p>
@@ -49,37 +49,6 @@
                 </a>
               </div>
             </div>
-            <!-- What's nearby and distances -->
-            <div class="flex">
-              <div>
-                <p class="font-bold text-black"> What's nearby</p>
-                <p class="text-black text-sm">Сумын төв</p>
-                <p class="text-black text-sm">Улаан цутгалан</p>
-                <p class="text-black text-sm">Бага цутгалан</p>
-                <p class="text-black text-sm">Төвхөн хийд</p>
-              </div>
-              <div class="mx-12">
-                <p class="text-black font-bold">Distance</p>
-                <p class="text-black text-sm">12.3км</p>
-                <p class="text-black text-sm">360м</p>
-                <p class="text-black text-sm">90м</p>
-                <p class="text-black text-sm">16км</p>
-              </div>
-              <div>
-                <p class="text-black font-bold">What's nearby</p>
-                <p class="text-black text-sm">Хөнөг</p>
-                <p class="text-black text-sm">Орхон</p>
-                <p class="text-black text-sm">Улаан</p>
-                <p class="text-black text-sm">Цагаан</p>
-              </div>
-              <div class="mx-12">
-                <p class="text-black font-bold">Distance</p>
-                <p class="text-black text-sm">2.3км</p>
-                <p class="text-black text-sm">90м</p>
-                <p class="text-black text-sm">1.3км</p>
-                <p class="text-black text-sm">12км</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -92,12 +61,14 @@
   import { ref, onMounted } from 'vue';
   
   const Bai = ref([]);
-  
+  const firebaseUser = useFirebaseUser();
   const fetchNews = async () => {
     try {
-      const response = await fetch('/api/foo/query?col=Baiguullaga');
+      const response = await fetch(`/api/foo/read?col=Baiguullaga&id=${firebaseUser.value.uid}`);
+
       const { result } = await response.json();
       Bai.value = result;
+      console.log
     } catch (error) {
       console.error('Error fetching news:', error);
     }
