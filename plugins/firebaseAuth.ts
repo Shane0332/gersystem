@@ -29,5 +29,4 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.provide("auth", auth);
   nuxtApp.vueApp.provide("storage", storage);
   nuxtApp.provide("storage", storage);
-
 });

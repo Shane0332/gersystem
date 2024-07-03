@@ -12,28 +12,24 @@
           <UInput class="text-black" v-model="state.org.name" color="sky" />
         </UFormGroup>
         <!-- about by org -->
-        <UFormGroup name="org.name" class="my-4 text-black">
-        <p class="text-black">Байгууллагын тухай :</p>
-        <UTextarea v-model="state.org.info" color="sky" class="my-4 text-black" />
-      </UFormGroup>
-        <!-- zurag oruulah heseg -->
-        <UFormGroup name="org.name" class="my-4 text-black">
-
-        <p class="text-black">Байгууллагын зураг :</p>
-        <UInput type="file" size="sm" icon="i-heroicons-folder" color="sky" class="my-4 text-black"
-          v-model="state.org.image" />
+        <UFormGroup name="org.info" class="my-4 text-black">
+          <p class="text-black">Байгууллагын тухай :</p>
+          <UTextarea v-model="state.org.info" color="sky" class="my-4 text-black" />
         </UFormGroup>
+        <!-- zurag oruulah heseg -->
+        
+          <p class="text-black">Байгууллагын зураг :</p>
+          <input type="file" size="sm" icon="i-heroicons-folder" color="sky" class="my-4 text-black" @change="handleFileChange" />
         <UFormGroup class="text-black" name="org.number">
           <span class="text-black">Холбогдох утас :</span>
           <UInput v-model="state.org.number" type="phone" color="sky" class="my-4 text-black" />
         </UFormGroup>
-
-        <UFormGroup class="text-black" name="org.number">
+        <UFormGroup class="text-black" name="org.b_gertoo">
           <span class="text-black">Гэрийн тоо :</span>
           <UInput v-model="state.org.b_gertoo" type="phone" color="sky" class="my-4 text-black" />
         </UFormGroup>
-        <UFormGroup class="text-black" name="org.number">
-          <span class="text-black">Эзэмшиг  :</span>
+        <UFormGroup class="text-black" name="org.e_id">
+          <span class="text-black">Эзэмшиг :</span>
           <UInput v-model="state.org.e_id" type="phone" color="sky" class="my-4 text-black" />
         </UFormGroup>
         <UButton type="submit" color="sky" class="h-12 w-full my-4">Next</UButton>
@@ -48,20 +44,16 @@
         <Icon name="material-symbols-light:sentiment-satisfied-outline" class="h-6 w-6 inline" />
       </p>
       <div class="flex space-x-6">
-        <div
-          class="bg-sky-50 transition ease-in-out hover:scale-110 h-10 w-10 rounded-xl border shadow-xl flex items-center justify-center">
+        <div class="bg-sky-50 transition ease-in-out hover:scale-110 h-10 w-10 rounded-xl border shadow-xl flex items-center justify-center">
           <Icon name="ic:baseline-facebook" class="text-sky-500 h-6 w-6" />
         </div>
-        <div
-          class="bg-sky-50 transition ease-in-out hover:scale-110 h-10 w-10 rounded-xl border shadow-xl flex items-center justify-center">
+        <div class="bg-sky-50 transition ease-in-out hover:scale-110 h-10 w-10 rounded-xl border shadow-xl flex items-center justify-center">
           <Icon name="tabler:brand-instagram" class="text-sky-500 h-6 w-6" />
         </div>
-        <div
-          class="bg-sky-50 transition ease-in-out hover:scale-110 h-10 w-10 rounded-xl border shadow-xl flex items-center justify-center">
+        <div class="bg-sky-50 transition ease-in-out hover:scale-110 h-10 w-10 rounded-xl border shadow-xl flex items-center justify-center">
           <Icon name="mdi:twitter" class="text-sky-500 h-6 w-6" />
         </div>
-        <div
-          class="bg-sky-50 transition ease-in-out hover:scale-110 h-10 w-10 rounded-xl border shadow-xl flex items-center justify-center">
+        <div class="bg-sky-50 transition ease-in-out hover:scale-110 h-10 w-10 rounded-xl border shadow-xl flex items-center justify-center">
           <Icon name="material-symbols:mail-outline" class="text-sky-500 h-6 w-6" />
         </div>
       </div>
@@ -71,10 +63,10 @@
 
 <script lang="ts" setup>
 import { object, string } from 'yup';
-import { ref, reactive } from 'vue';
+import { reactive } from 'vue';
 import type { FormSubmitEvent } from '#ui/types';
 import type { InferType } from 'yup';
-import { getStorage } from 'firebase/storage';
+import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 const schema = object({
   org: object({
@@ -85,8 +77,24 @@ const schema = object({
     e_id: string().required('Required'),
     number: string().min(8, 'Must be at least 8 characters').required('Required'),
   })
-})
+});
 
+const handleFileChange = async (event: Event) => {
+  const target = event.target as HTMLInputElement;
+  if (target && target.files && target.files[0]) {
+    const file = target.files[0];
+    const storage = getStorage();
+    const imageRef = storageRef(storage, `image/${file.name}`);
+
+    try {
+      await uploadBytes(imageRef, file);
+      const url = await getDownloadURL(imageRef);
+      state.org.image = url;  // Update the state with the image URL
+    } catch (error) {
+      console.error('Error uploading image:', error);
+    }
+  }
+};
 
 type Schema = InferType<typeof schema>;
 
@@ -113,7 +121,7 @@ const onSubmit = async (event: FormSubmitEvent<Schema>) => {
       body: JSON.stringify(state.org)
     });
 
-    const { result } = await response.json();
+    const result = await response.json();
     console.log(result);
   } catch (error) {
     console.error('Error submitting form:', error);
