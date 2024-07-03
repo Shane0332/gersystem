@@ -67,25 +67,36 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
-const id = route.params.b_id; 
+const id = ref(route.params.b_id);  
 
-const Ger = ref([]);
-
+const Ger = ref<any[]>([]);  
 const fetchGer = async () => {
+  if (!id.value) return;  
+
   try {
-    const response = await fetch(`/api/foo/read?col=ger&id=${id}`);
+    const response = await fetch(`/api/foo/readGer?col=ger&id=${id.value}`);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
     const { result } = await response.json();
     Ger.value = result;
+    console.log(Ger.value)
+    console.log(result)
   } catch (error) {
     console.error('Error fetching data:', error);
   }
 };
 
 onMounted(fetchGer);
+
+watch(() => route.params.b_id, (newId) => {
+  id.value = newId;
+  fetchGer();  
+});
 
 definePageMeta({
   layout: 'default',
