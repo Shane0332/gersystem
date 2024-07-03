@@ -1,20 +1,18 @@
 <template>
     <!-- Header -->
-    <div class="bg-sky-50 w-full h-100">
-      <div class="h-12  bg-white border  text-stone-900 mx-12 md:32 lg:80">
-        <div class="flex justify-start space-x-10 ml-32 text-sm ">
-          <a href="#" class="hover:text-sky-500 my-4"><Icon name="ic:baseline-local-phone" class="mr-1 mb-0.5"/>96611510</a>
-          <a href="#" class="hover:text-sky-500 my-4"><Icon name="ic:outline-mail" class="mr-1 mb-0.5"/>Gersystem@gmail.com</a>
-          <a href="https://www.facebook.com/profile.php?id=100066647678479" class="hover:text-sky-500 my-4"><Icon name="ic:baseline-facebook" class="mr-1 mb-0.5"/>Gersystem</a>
-          <a href="https://www.instagram.com/ripperflyy/" class="hover:text-sky-500 my-4"><Icon name="tabler:brand-instagram" class="mr-1 mb-0.5"/>gersystem</a>
-        </div>
-      </div>
-    </div>
+ <Header/>
   <!-- Body -->
    <div class="bg-sky-50 h-fit w-full flex">
        <div class="bg-white h-fit border mx-12">
-          <p class="font-bold text-slate-900 mx-12 my-6">{{id}}</p>
-          <p class="text-sm text-black mx-12 my-6"><Icon name="material-symbols-light:distance" class="mr-1 mb-0.5 text-sky-400 h-5 w-5"/>ӨВ Бат-өлзий сум</p>
+        <div class="grid grid-cols-2">
+          <div>
+            <p class="font-bold text-slate-900 mx-12 my-6">{{id}}</p> 
+          </div>
+          <div class="flex justify-end">
+           <NuxtLink to="/ger"> <UButton label="ГЭР НЭМЭХ" color="gray" class="w-26 h-8 my-6 mx-12 animate-bounce text-white"/></NuxtLink>
+          </div>
+        </div>
+        
           <div v-for="ger in Ger" :key="ger.id" class="bg-white border h-fit mx-12 flex rounded-lg">
               <div>
                   <p class="font-bold text-slate-900 mx-6 my-2">{{ ger.gu_id}} </p>
