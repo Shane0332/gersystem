@@ -18,7 +18,7 @@ import { ref, onMounted } from 'vue';
 
 export default {
   setup() {
-    const firebaseUser = useFirebaseUser(); // Assuming useFirebaseUser is a custom hook
+    const firebaseUser = useFirebaseUser(); 
 
     const Bai = ref([]);
 
