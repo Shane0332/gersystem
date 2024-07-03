@@ -28,18 +28,16 @@
         </UFormGroup>
       </div>
       <NuxtLink to="/create">
-        <Button class="bg-sky-500 rounded-lg h-8 w-64 my-4 mx-4">Register</Button>
+        <p class="underline text-slate-900 text-sm my-2 flex justify-end mx-4">Already have an account?</p>
       </NuxtLink>      
-      <NuxtLink to="/login">
-        <Button class="bg-sky-500 rounded-lg h-8 w-64  mx-4">Sign In</Button>
-      </NuxtLink>           
+            
       <div v-if="message" class="has-text-success p-3">{{ message }}</div>
       <div v-if="title === 'Create'">
         <Button class="bg-sky-500 rounded-lg h-8 w-64 my-4 mx-4" @click="$emit('submit')">Create Account</Button>
       </div>
       <div v-if="title === 'Sign in'">
         <NuxtLink to="/home">
-          <Button class="bg-sky-500 rounded-lg h-8 w-64  mx-4" @click="$emit('submit')">Sign In</Button>
+          <Button class="bg-sky-500 rounded-lg h-8 w-64 my-4 mx-4" @click="$emit('submit')">Sign In</Button>
         </NuxtLink>
       </div>
       <NuxtLink to="/home">

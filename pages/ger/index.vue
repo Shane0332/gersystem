@@ -11,11 +11,14 @@
       <span class="text-white mx-4 ">Гэрийн дугаар*</span>
       <UInput v-model="value" color="sky" class="w-32 mx-4"/>
     </div>
-    <div class="mt-6">
-            <UFormGroup  name="org" class="mx-4">
-          <span class="text-white text-sm">Гэрийн хэмжээ*</span>
-          <URadioGroup v-model="selected"  :options="options2" color="sky"/>
-         </UFormGroup>  
+    <div>
+
+      <div class="mt-6">
+              <UFormGroup  name="org" class="mx-4">
+            <span class="text-white text-sm">Гэрийн хэмжээ*</span>
+            <URadioGroup v-model="selected"  :options="options2" color="sky"/>
+           </UFormGroup>  
+      </div>
     </div>
     <div class="mt-6">
             <UFormGroup  name="org" class="mx-4">
@@ -86,7 +89,7 @@ const options = [{
   value: 'байхгүй',
   label: 'байхгүй'
 }]
-const selected = ref('sms')
+const selected = ref('байгаа')
 
 const options1=[{
   value:'Luxury',
